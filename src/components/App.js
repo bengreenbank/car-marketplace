@@ -1,9 +1,9 @@
-function App() {
+import Header from './Header'
+
+export default () => {
   return (
     <div>
-      <p className="text-3xl">Lorem ipsum</p>
+      <Header />
     </div>
   )
 }
-
-export default App
