@@ -1,7 +1,7 @@
 import Logo from '../images/logo.svg'
 import Button from './Button'
 
-export default () => (
+const Header = () => (
   <header className="container flex justify-between items-center border-b border-b-slate-400">
     <img src={Logo} alt="Car Marketplace" width="100" height="100" />
 
@@ -12,3 +12,5 @@ export default () => (
     />
   </header>
 )
+
+export default Header

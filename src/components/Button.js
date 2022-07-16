@@ -1,4 +1,4 @@
-export default (props) => (
+const Button = (props) => (
   <a
     href={props.url}
     target={props.target}
@@ -7,3 +7,5 @@ export default (props) => (
     {props.text}
   </a>
 )
+
+export default Button
