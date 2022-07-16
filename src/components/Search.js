@@ -1,15 +1,21 @@
 import React from 'react'
 import algoliasearch from 'algoliasearch/lite'
-import { InstantSearch } from 'react-instantsearch-hooks-web'
+import { InstantSearch, Hits } from 'react-instantsearch-hooks-web'
 
 const searchClient = algoliasearch(
-  process.env.ALGOLIA_APPLICATION_ID,
-  process.env.ALGOLIA_SEARCH_API_KEY
+  process.env.REACT_APP_ALGOLIA_APPLICATION_ID,
+  process.env.REACT_APP_ALGOLIA_SEARCH_API_KEY
 )
 
-export default () => (
+const Hit = ({ hit }) => JSON.stringify(hit)
+
+const Search = () => (
   <InstantSearch
-    indexName={process.env.ALGOLIA_INDEX_NAME}
+    indexName={process.env.REACT_APP_ALGOLIA_INDEX_NAME}
     searchClient={searchClient}
-  ></InstantSearch>
+  >
+    <Hits hitComponent={Hit} />
+  </InstantSearch>
 )
+
+export default Search
